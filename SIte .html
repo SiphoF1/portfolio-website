@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Quote</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .quote-container {
+      margin: 50px auto;
+      max-width: 600px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="quote-container">
+    <h1>Daily Quote</h1>
+    <div class="quote"></div>
+  </div>
+
+  <script>
+    // Array of quotes
+    const quotes = [
+      "Today is a new beginning.",
+      "Believe you can and you're halfway there.",
+      "Your attitude determines your direction.",
+      "Embrace the uncertainty.",
+      "Strength grows in the moments when you think you can't go on but you keep going anyway."
+      // Add more quotes as needed
+    ];
+
+    // Function to get a random quote
+    function getRandomQuote() {
+      return quotes[Math.floor(Math.random() * quotes.length)];
+    }
+
+    // Function to display a random quote
+    function displayQuote() {
+      const quoteElement = document.querySelector('.quote');
+      quoteElement.textContent = getRandomQuote();
+    }
+
+    // Call displayQuote when the page loads
+    displayQuote();
+
+    // Set interval to update quote every 5 minutes (300,000 milliseconds)
+    setInterval(displayQuote, 300000); // 5 minutes in milliseconds
+  </script>
+</body>
+</html>
